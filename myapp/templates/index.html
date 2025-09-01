@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {{peoples}}
+
+    <table border="1">
+        <tr>
+            <th>s.no</th>
+            <th>name</th>
+            <th>age</th>
+            <th>vote</th>
+        </tr>
+        {%for people in peoples%}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{people.name}}</td>
+            <td>{{people.age}}</td>
+            <td>{%if people.age >= 18%}
+                👋🏼
+            {%else%}
+                🤚🏼
+            {%endif%}
+            </td>
+        </tr>
+        {%endfor%}
+    </table>
+
+    
+</body>
+</html>

@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- {{persons}} -->
+    <table border="2" style="display: none;">
+       <tr>
+        <th>No</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Vote</th>
+       </tr>
+       {% for person in persons%}
+       <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{person.name}}</td>
+        <td>{{person.age}}</td>
+        <td>{% if person.age >= 18%}
+            👍🏻
+            {% else %}
+            👎🏻
+            {% endif %}
+        </td>
+       </tr>
+       {%endfor%}
+    </table>
+    <div>
+        <textarea id="content" name="content"></textarea>
+    </div>
+    <script src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+    <script src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+    <script>
+        CKEDITOR.replace('content');
+    </script>
+</body>
+</html>

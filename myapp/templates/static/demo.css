@@ -1,0 +1,7 @@
+tr,td,th{
+        border: 2px solid rgb(0, 9, 134);
+    }
+    td{
+        background-color: rgb(234, 241, 255);
+    }
+    th{background-color: rgb(253, 221, 79);}
